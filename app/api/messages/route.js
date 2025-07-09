@@ -3,7 +3,7 @@ import connectDB from "@/config/database";
 import Message from "@/config/message";
 import { getSessionUser } from '@/utils/getSessionUser';
 
-export const dynamic = 'force-dynamic';
+// export const dynamic = 'force-dynamic';
 
 export async function GET(req) {
     try {
