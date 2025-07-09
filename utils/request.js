@@ -1,13 +1,16 @@
 const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN || null;
+export const dynamic = 'force-dynamic';
 
 async function fetchProperties() {
     try {
         if (!apiDomain) {
-            throw new Error('API domain is not set');
+            return [];
         }
         const res = await fetch(`${apiDomain}/api/properties`, {
             cache: 'no-store',
         });
+
+        console.log(res);
 
         if (!res.ok) {
             throw new Error('Failed to fetch properties');
