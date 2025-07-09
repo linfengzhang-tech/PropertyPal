@@ -8,8 +8,8 @@ const HomePage = async () => {
         <>
             <Hero />
             <InfoBoxes />
-            <HomeProperties heading="Recent Properties" sort="recent" />
             <FeaturedProperties heading="Featured Properties" limit={2} />
+            <HomeProperties heading="Recent Properties" sort="recent" />
         </>
     );
 }
