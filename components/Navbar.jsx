@@ -36,14 +36,14 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-orange-500 border-b border-orange-300 shadow-lg">
+    <nav className="bg-orange-100 border-b border-orange-300 shadow-lg">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
             <button
               type="button"
               id="mobile-dropdown-button"
-              className="relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="relative inline-flex items-center justify-center rounded-md p-2 text-black hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu"
               aria-expanded="false"
               onClick={toggleMobileMenu}
@@ -75,7 +75,7 @@ const Navbar = () => {
                 width={80}
                 height={80}
               />
-              <span className="hidden md:block text-white text-3xl font-extrabold ml-2">
+              <span className="hidden md:block text-black text-3xl font-extrabold ml-2">
                 PropertyPal
               </span>
             </Link>
@@ -83,20 +83,20 @@ const Navbar = () => {
               <div className="flex space-x-4">
                 <Link
                   href="/"
-                  className={`text-white hover:bg-orange-600 rounded-md px-3 py-2 text-lg font-medium ${pathname === '/' ? 'bg-orange-700' : ''}`}
+                  className={`text-black hover:bg-orange-600 rounded-md px-3 py-2 text-lg font-medium ${pathname === '/' ? 'bg-orange-700 text-white' : ''}`}
                 >
                   Home
                 </Link>
                 <Link
                   href="/properties"
-                  className={`text-white hover:bg-orange-600 rounded-md px-3 py-2 text-lg font-medium ${pathname === '/properties' ? 'bg-orange-700' : ''}`}
+                  className={`text-black hover:bg-orange-600 rounded-md px-3 py-2 text-lg font-medium ${pathname === '/properties' ? 'bg-orange-700 text-white' : ''}`}
                 >
                   Properties
                 </Link>
                 {session && (
                   <Link
                     href="/properties/add"
-                    className={`text-white hover:bg-orange-600 rounded-md px-3 py-2 text-lg font-medium ${pathname === '/properties/add' ? 'bg-orange-700' : ''}`}
+                    className={`text-black hover:bg-orange-600 rounded-md px-3 py-2 text-lg font-medium ${pathname === '/properties/add' ? 'bg-orange-700 text-white' : ''}`}
                   >
                     Add Property
                   </Link>
@@ -111,10 +111,10 @@ const Navbar = () => {
                 {providers && Object.values(providers).map((provider, index) => (
                   <button
                     key={index}
-                    className="flex items-center text-white bg-orange-600 hover:bg-orange-800 rounded-md px-3 py-2"
+                    className="flex items-center text-black bg-orange-600 hover:bg-orange-800 rounded-md px-3 py-2"
                     onClick={() => signIn(provider.id)}
                   >
-                    <FaGoogle className="text-white mr-2" />
+                    <FaGoogle className="text-black mr-2" />
                     <span>Login or Register</span>
                   </button>
                 ))}
@@ -126,7 +126,7 @@ const Navbar = () => {
               <Link href="/messages" className="relative group">
                 <button
                   type="button"
-                  className="relative rounded-full bg-gray-800 p-1 text-white hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  className="relative rounded-full bg-gray-100 p-1 text-black hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 border border-gray-300"
                 >
                   <span className="sr-only">View notifications</span>
                   <svg
@@ -221,24 +221,24 @@ const Navbar = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div id="mobile-menu" className="bg-orange-500">
+        <div id="mobile-menu" className="bg-orange-100">
           <div className="space-y-1 px-2 pb-3 pt-2">
             <Link
               href="/"
-              className={`text-white block rounded-md px-3 py-2 text-base font-medium ${pathname === '/' ? 'bg-orange-700' : ''}`}
+              className={`text-black block rounded-md px-3 py-2 text-base font-medium ${pathname === '/' ? 'bg-orange-700 text-white' : ''}`}
             >
               Home
             </Link>
             <Link
               href="/properties"
-              className={`text-white hover:bg-orange-700 block rounded-md px-3 py-2 text-base font-medium ${pathname === '/properties' ? 'bg-orange-700' : ''}`}
+              className={`text-black hover:bg-orange-700 block rounded-md px-3 py-2 text-base font-medium ${pathname === '/properties' ? 'bg-orange-700 text-white' : ''}`}
             >
               Properties
             </Link>
             {session && (
               <Link
                 href="/properties/add"
-                className={`text-white hover:bg-orange-700 block rounded-md px-3 py-2 text-base font-medium ${pathname === '/properties/add' ? 'bg-orange-700' : ''}`}
+                className={`text-black hover:bg-orange-700 block rounded-md px-3 py-2 text-base font-medium ${pathname === '/properties/add' ? 'bg-orange-700 text-white' : ''}`}
               >
                 Add Property
               </Link>
@@ -246,10 +246,10 @@ const Navbar = () => {
             {!session && providers && Object.values(providers).map((provider, index) => (
               <button
                 key={index}
-                className="flex items-center text-white bg-orange-700 hover:bg-orange-800 rounded-md px-3 py-2 my-4"
+                className="flex items-center text-black bg-orange-700 hover:bg-orange-800 rounded-md px-3 py-2 my-4"
                 onClick={() => signIn(provider.id)}
               >
-                <FaGoogle className="text-white mr-2" />
+                <FaGoogle className="text-black mr-2" />
                 <span>Login or Register</span>
               </button>
             ))}
